@@ -10,8 +10,10 @@ class TicketController extends Controller
 
 public function index()
 {
-  $tickets=Ticket::all();
+  $tickets=Ticket::paginate(5);
+
   return view('tickets.index', compact('tickets'));
+
 }
 
 public function store(Request $request)

@@ -14,9 +14,8 @@
     <h3>Please select an option</h3>
     <br />
     <ul>
-    <li><a href='/index'>View</a></li>
-    <li><a href='/create'>Add</a></li>
-    <li><a href='/edit'>Update</a></li>
+    <li><a href='/index'>View / Maintain existing tickets</a></li>
+    <li><a href='/create'>Create a new ticket</a></li>
     </ul>
     @yield('main')
   </div>

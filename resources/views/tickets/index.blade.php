@@ -40,6 +40,7 @@
             </td>
         </tr>
         @endforeach
+        {{ $tickets->links() }}
     </tbody>
   </table>
 <div>
