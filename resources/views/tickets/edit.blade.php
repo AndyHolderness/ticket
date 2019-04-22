@@ -2,7 +2,7 @@
 @section('main')
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
-        <h1 class="display-3">Update a contact</h1>
+        <h1 class="display-3">Amend Ticket</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -37,7 +37,17 @@
             </div>
             <div class="form-group">
                 <label for="residential_status">Residential status:</label>
-                <input type="text" class="form-control" name="residential_status"  value={{ $ticket->residential_status }} />
+                <select class="form-control" name="residential_status"/>
+                  <option value="">Select Owner or Tenant</option>
+
+                    @if($ticket->residential_status == "Owner") <option selected='selected' value='Owner'>Owner</option>
+                    @else <option value='Owner'>Owner</option>
+                    @endif
+
+                    @if($ticket->residential_status == "Tenant") <option selected='selected' value='Tenant'>Tenant</option>
+                    @else <option value='Tenant'>Tenant</option>
+                    @endif
+                </select>
             </div>
             <div class="form-group">
                 <label for="landlord_details">Landlord details (if Tenant):</label>
@@ -45,7 +55,7 @@
             </div>
             <div class="form-group">
                 <label for="status">Ticket Status:</label>
-                <input type="text" class="form-control" name="status" value="open"  value={{ $ticket->status }} />
+                <input type="text" class="form-control" name="status" value={{ $ticket->status }} />
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

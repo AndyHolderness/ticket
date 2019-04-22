@@ -37,9 +37,9 @@
           <div class="form-group">
               <label for="residential_status">Residential status:</label>
               <select class="form-control" name="residential_status"/>
-              <option value="">Select Owner or Tenant</option>
-              <option value="Owner">Owner</option>
-              <option value="Tenant">Tenant</option>
+              <option id=1 value="">Select Owner or Tenant</option>
+              <option id=2 value="Owner">Owner</option>
+              <option id=3 value="Tenant">Tenant</option>
               </select>
           </div>
           <div class="form-group">
@@ -48,7 +48,7 @@
           </div>
           <div class="form-group">
               <label for="status">Ticket Status:</label>
-              <input type="text" class="form-control" readonly name="status" value="open" />
+              <input type="text" class="form-control" hidden name="status" value="open" />
           </div>
           <button type="submit" class="btn btn-primary-outline">Create Ticket</button>
       </form>
