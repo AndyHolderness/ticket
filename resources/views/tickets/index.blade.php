@@ -14,6 +14,9 @@
           <td>Reported By</td>
           <td>Residential Status</td>
           <td>Landlord Details</td>
+          <td>Created</td>
+          <td>Last updated</td>
+
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -27,7 +30,9 @@
             <td>{{$ticket->appliance_address}}</td>
             <td>{{$ticket->reporter_details}}</td>
             <td>{{$ticket->residential_status}} </td>
-            <td>{{  $ticket->landlord_details }}</td>
+            <td>{{$ticket->landlord_details }}</td>
+            <td>{{$ticket->date_created }}</td>
+            <td>{{$ticket->date_updated }}</td>
             <td>
                <a href="{{ route('tickets.edit',$ticket->id)}}" class="btn btn-primary">Edit</a>
             </td>
@@ -35,7 +40,7 @@
                   <form action="{{ route('tickets.destroy', $ticket->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button onclick="return confirm('Are you sure?')" class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </td>
         </tr>

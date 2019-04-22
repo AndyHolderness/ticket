@@ -11,8 +11,9 @@ class TicketController extends Controller
 public function index()
 {
   $tickets=Ticket::paginate(5);
+  $sortby="date_updated";
 
-  return view('tickets.index', compact('tickets'));
+  return view('tickets.index', compact('tickets',$sortby));
 
 }
 
@@ -66,6 +67,7 @@ public function update(Request $request, $id)
         $ticket->appliance_address = $request->get('appliance_address');
         $ticket->residential_status = $request->get('residential_status');
         $ticket->landlord_details = $request->get('landlord_details');
+        $ticket->date_updated = $request->get('date_updated');
         $ticket->save();
 
     $ticket->update($request->all());
