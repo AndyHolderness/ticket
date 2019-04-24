@@ -7,24 +7,26 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Ticket ID / Status</td>
-          <td>Fault</td>
-          <td>Applicance</td>
-          <td>Applicance Address</td>
-          <td>Reported By</td>
-          <td>Residential Status</td>
-          <td>Landlord Details</td>
-          <td>Created</td>
-          <td>Last updated</td>
+          <th @sortablelink('id')>Ticket Number</th>
+          <th @sortablelink('status')>Status</th>
+          <th>Fault</th>
+          <th>Applicance</th>
+          <th>Applicance Address</th>
+          <th>Reported By</th>
+          <th>Residential Status</th>
+          <th>Landlord Details</th>
+          <th @sortablelink('created_by')>Created</th>
+          <th @sortablelink('date_updated')>Last updated</th>
 
-          <td colspan = 2>Actions</td>
+          <th colspan = 2>Actions</th>
         </tr>
     </thead>
     <tbody>
 
         @foreach($tickets as $ticket)
         <tr>
-            <td>{{$ticket->id}}  -  {{  $ticket->status }}</td>
+            <td>{{$ticket->id}}</td>
+            <td>{{$ticket->status}}</td>
             <td>{{$ticket->fault}}</td>
             <td>{{$ticket->appliance_details}}</td>
             <td>{{$ticket->appliance_address}}</td>

@@ -10,10 +10,11 @@ class TicketController extends Controller
 
 public function index()
 {
-  $tickets=Ticket::paginate(5);
-  $sortby="date_updated";
 
-  return view('tickets.index', compact('tickets',$sortby));
+  $tickets=Ticket::orderBy("date_updated","desc")->paginate(5);
+
+
+  return view('tickets.index', compact('tickets'));
 
 }
 
